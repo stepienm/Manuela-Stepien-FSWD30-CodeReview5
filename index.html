@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>CodeReview5</title>
+   <link rel="stylesheet" href="">
+  
+   <style>
+
+      html{
+        width: 1280px;
+       }
+      body{
+        background: url(img/computer.jpg) no-repeat
+       }
+      header{
+       background-color:#8600b3;
+       text-align: center;
+       margin: -8px -8px 0px -8px;
+       padding: 20px 50px;
+       height: 10%;
+       }
+
+      .norm{
+        color: white;
+        background-color:#ffb3ff;
+        text-align: center;
+        margin: 0px -8px 0px -8px;
+        padding: 235px;
+        font-size: 30px;
+        opacity: 0.4;
+       }
+
+      .bilder{  
+        width: 1280px;  
+        height: 550px;
+        background-color:#FFFFFF ;
+        margin: 0px 0px 0px -8px;
+        padding: 23px 0px 50px 30px;
+      }
+      
+      .pers {
+        width: 600px;
+        background-color: #d6c0d8;
+        margin: 5px 5px 5px 5px;
+
+       }
+
+       .bild img {
+           width: 150px;
+           margin-left: 20px;
+           margin-top: 20px;
+           margin-right: 20px;
+       }
+
+       .text{
+        padding-top: 20px;
+        font-size: 20px;
+        margin-top: 30px;
+
+
+       }
+
+       button{
+        width: 100px;
+        height:45px;
+        font-size: 28px;
+        border-radius:16px;
+        align-self: flex-end;
+        margin-top: 60px;
+        margin-left: 200px;
+        margin-bottom: 20px;
+       }
+      
+      hr{
+        height: 1px;
+        background-color: black;
+        width: 85%;
+      }
+
+      footer{
+        text-align: center;
+        padding-top: 30px;
+        height: 60px;
+      }
+
+
+
+
+       </style>
+
+</head>
+<body>
+
+
+       <header>
+           <img src="img/logo.png" width="40%">
+       </header>
+       <div class="norm">
+           <h1>Welcome to our website</h1>
+       </div>
+
+        <div class="bilder">
+          <script>
+
+
+           var stefan = {
+               name: "Stefan",
+               surname:"Reitmeier",
+               age:22,
+               image: "img/boy1.jpg",
+               likes: 0,
+               herz: "img/like.png",
+               hobbies: "swimming, dancing, playing soccer, playing piano and snowboarding",
+               pets: "2 cats, 4 rabbits and 3 chinchillas"
+           };
+           var linda = {
+               name: "Linda",
+               surname:"Winter",
+               age:29,
+               image: "img/girl1.jpg",
+               likes: 0,
+               herz: "img/like.png",
+               hobbies: "boxing, swimming, computer programming and photography",
+               pets: "3 dogs and 4 ferrets"
+           };
+           var kate = {
+               name: "Kate",
+               surname:"Nelson",
+               age:24,
+               image: "img/girl2.jpg",
+               likes: 0,
+               herz: "img/like.png",
+               hobbies: "dancing, reading books skiing, travelling, playing guitar, volleyball, tennis",
+               pets: "3 birds, 3 hamsters and 2 turtles"
+           };
+           var richard = {
+               name: "Richard",
+               surname:"Cebener",
+               age:28,
+               image: "img/boy2.jpg",
+               likes: 0,
+               herz: "img/like.png",
+               hobbies: "sport(swimming, skiing, jogging, climbing) and producing electronical music",
+               pets: " i don't have any pets"
+           };
+           var personen = [
+               stefan,
+               linda,
+               kate,
+               richard
+           ];
+
+          for (var i=0; i < personen.length; i++) {
+
+           if (i==2){
+               document.write("<div style='clear:both;'></div>");
+           }
+
+           document.write("<div class=\"pers\" style='float: left' >");
+
+           document.write( "<div class=\"bild\" style='float:left;'>");
+           document.write( "<img src='" + personen[i].image  + "' >");
+           document.write("</div>");
+
+           document.write( "<div  class=\"text\">");
+           document.write( " Name: " + "<b>" + personen[i].name + "</b>" + "<br>");
+           document.write( " Surname: " + "<b>" + personen[i].surname + "</b>" + "<br>");
+           document.write( " Age: " + "<b>" + personen[i].age + "</b>" +"<br>");
+           document.write( " Hobbies: " + "<b>" + personen[i].hobbies + "</b>" +"<br>");
+           document.write( " Pets: " + "<b>" + personen[i].pets + "</b>" +"<br>");
+
+
+          //styles vom button ist hier
+           document.write( '<button onclick="like('+ i +')">Like</button><span style=" white-space: nowrap;  font-size: 40px; color: red; width: 150px;margin-left: 15px; margin-right: 5px;" id="like' + i + '">' + personen[i].likes + '</span><img src="' + personen[i].herz +'">');
+
+
+           document.write("</div>");
+           document.write("</div>");
+           }
+
+
+           function like (index){
+              personen[index].likes=personen[index].likes+1;
+
+              document.getElementById('like' + index).innerHTML=personen[index].likes;
+           }
+
+      </script>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <hr></hr>
+    <footer>
+      <img src="img/logo-footer.png">
+    </footer>
+
+</body>
+</html>
